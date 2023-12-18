@@ -35,9 +35,9 @@ export default function Chatbot() {
             return;
         }
         setLoading(true);
-        axios.post('https://chatbot-7j2j.onrender.com/chat', userInput).then((res) => {
+        axios.post('https://chatbot-7j2j.onrender.com/chatbot/chat', userInput).then((res) => {
 
-            axios.get('https://chatbot-7j2j.onrender.com/view-chat').then((res) => {
+            axios.get('https://chatbot-7j2j.onrender.com/chatbot/view-chat').then((res) => {
                 setMsg(res.data);
                 setLoading(false);
             });
@@ -50,7 +50,7 @@ export default function Chatbot() {
 
     useEffect(() => {
         setLoading(true);
-        axios.get('https://chatbot-7j2j.onrender.com/view-chat').then((res) => {
+        axios.get('https://chatbot-7j2j.onrender.com/chatbot/view-chat').then((res) => {
             setMsg(res.data)
             setLoading(false);
         })
